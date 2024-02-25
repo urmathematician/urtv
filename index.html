@@ -37,10 +37,10 @@
        margin-top: 20px;}
        #dataContainer4 {
     position: relative;
-    background: rgba(8, 888, 0, 0.5); /* Green color with transparency */
+    background: rgba(8, 8, 0, 0.5); /* Green color with transparency */
     padding: 40px;
     border-radius: 20px;
-    backdrop-filter: blur(1px); /* Apply blur effect */
+    backdrop-filter: blur(3px); /* Apply blur effect */
     max-height: 500px; /* Set max height for scrollability */
     overflow-y: auto; /* Enable vertical scrolling */
     margin: 0 auto; /* Center the container horizontally */
@@ -75,6 +75,11 @@
 <h4> Movie English = 00:00 to 1:00</h3>
 <h4>Movie Urdu = 1:00 to 2:00 </h3>
 <h4>I want to eat your pancreas = 3:00 to 8:00 </h3>
+     <h4> Nikolia Tesla = 8:00  to 9:00 </h3>
+     
+     <h4> Nasheed = 9:00  to 10:00 </h3>
+     
+     <h4> Movie on Muslim History now Faith 1453 = 9:00  to 10:00 </h3>
 <h4>Season 5 Ep1 = 13:00  to 14:00 </h3>
 
 <h4>Season 5 Ep2 = 14:00 to 15:00 </h3>
@@ -115,6 +120,27 @@
     } else if (currentHour >= 1 && currentHour < 2){
       videoSource = 'https://mega.nz/embed/XEwi3J5K#Wu8dsUJZFe77weAp8V9QVHwsPhJIQwSAnu9IGaZ2Ajk'; // Replace with the URL of your second video
     }
+     else if (currentHour >= 2 && currentHour < 8){
+      videoSource = 'https://www.dailymotion.com/video/x8pqjkn'; // Replace with the URL of your second video
+    }
+    
+    else if (currentHour >= 8 && currentHour < 9){
+      videoSource = 'https://mega.nz/embed/TIRBRZBD#fszeVMIluo72Z2283C60k9iu3fRfGpifgU8bOWJzr1M'; // Replace with the URL of your second video
+    }
+     
+
+    else if (currentHour >= 9 && currentHour < 10){
+      videoSource = 'https://mega.nz/embed/CZBiRajZ#SKZmiWIrGqFxRI_jmZ3x3Oc4qFagGITS_-kFAtUUZEg'; // Replace with the URL of your second video
+    }
+     
+     
+     
+    else if (currentHour >= 10 && currentHour < 13){
+      videoSource = 'https://www.youtube.com/watch?v=j4TOUrxzd28'; // Replace with the URL of your second video
+    }
+     
+     
+     
     else if (currentHour >= 13 && currentHour < 14){
       videoSource = 'https://mega.nz/embed/6coVXSiJ#SP1PAPMo05P1dAV7S5tN2dWZ4LUfN76YZhNTUfWCQ7Y'; // Replace with the URL of your second video
     }
