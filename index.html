@@ -52,6 +52,23 @@
     margin: 0 auto; /* Center the container horizontally */
     color: white; /* Set text color to white */
 }
+ .collapsible {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: black;
+}
 </style>
 </head>
 
@@ -76,31 +93,24 @@
   
 
 <h6>Pakistani time</h6>
-<h4> Movie English = 00:00 to 1:00</h3>
-<h4>Movie Urdu = 1:00 to 2:00 </h3>
-<h4>I want to eat your pancreas = 3:00 to 8:00 </h3>
-     <h4> Nikolia Tesla = 8:00  to 9:00 </h3>
-        <h4> Ice age 2 movie = 9:00  to 10:00 </h3>
-     
-     <h4> Every Song Miraculous = 9:00  to 10:00 </h3>
-<h4>Season 5 Ep1 = 13:00  to 14:00 </h3>
-
-<h4>Season 5 Ep2 = 14:00 to 15:00 </h3>
-
-<h4>Season 5 Ep3 = 15:00  to 16:00 </h3>
-
-<h4>Season 5 Ep4 = 16:00  to 17:00 </h3>
-
-<h4>Season 5 Ep5 = 17:00  to 18:00 </h3>
-
-<h4>Season 5 Ep6 = 18:00  to 19:00 </h3>
-
-<h4>Season 5 Ep7 = 19:00  to 20:00 </h3>
-
-<h4>Season 5 Ep 23  = 20: pm to 21:00 </h3>
-
-
-<h4>Kung Fu Panda 4  = 23:00  to 0:00 </h3>
+<button class="collapsible">Time Table</button>
+<div class="content">
+  <h4>Movie English = 00:00 to 1:00</h4>
+  <h4>Movie Urdu = 1:00 to 2:00 </h4>
+  <h4>I want to eat your pancreas = 3:00 to 8:00 </h4>
+  <h4>Nikolia Tesla = 8:00  to 9:00 </h4>
+  <h4>Ice age 2 movie = 9:00  to 10:00 </h4>
+  <h4>Every Song Miraculous = 9:00  to 10:00 </h4>
+  <h4>Season 5 Ep1 = 13:00  to 14:00 </h4>
+  <h4>Season 5 Ep2 = 14:00 to 15:00 </h4>
+  <h4>Season 5 Ep3 = 15:00  to 16:00 </h4>
+  <h4>Season 5 Ep4 = 16:00  to 17:00 </h4>
+  <h4>Season 5 Ep5 = 17:00  to 18:00 </h4>
+  <h4>Season 5 Ep6 = 18:00  to 19:00 </h4>
+  <h4>Season 5 Ep7 = 19:00  to 20:00 </h4>
+  <h4>Season 5 Ep 23  = 20: pm to 21:00 </h4>
+  <h4>Kung Fu Panda 4  = 21:00  to 0:00 </h4>
+</div>
 
 </div>
 
@@ -113,6 +123,22 @@
 </div>
 
 <script>
+
+ 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
   function getCurrentHour() {
     return new Date().getHours();
   }
@@ -182,12 +208,9 @@
       videoSource = 'https://mega.nz/embed/rRQx3SAQ#MzS8liHATLVp3ITGI3kipZm2irKZ91nrZNZ4qqKLJPU'; // Replace with the URL of your second video
     }
     
-        else if (currentHour >= 21 && currentHour < 0){
-      videoSource = 'https://mega.nz/embed/iU5xWTgC#6bNANDaE6_mJRCiedBjE-skaQmEu8n5IdKmxndCWWSg'; // Replace with the URL of your second video
-    }
-    // Embed the video in the container
-    videoContainer.innerHTML = '<iframe width="640" height="360" frameborder="0" src="' + videoSource + '" allowfullscreen></iframe>';
-  }
+       else if (currentHour >= 21 || currentHour < 0){
+  videoSource = 'https://mega.nz/embed/iU5xWTgC#6bNANDaE6_mJRCiedBjE-skaQmEu8n5IdKmxndCWWSg'; // Replace with the URL of your second video
+}
 
   // Load appropriate video when the page loads
   loadVideo();
