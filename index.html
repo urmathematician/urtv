@@ -87,7 +87,7 @@ h6 {
         <h3>Local Time:</h3>
         <div id="clock-time">12:34</div>
     </div>
-
+<iframe width="" height="315" src="https://www.youtube.com/embed/LplA-UYwA38?si=BSWgP4fgu4akp18e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <h6>Pakistani time</h6>
     <button class="collapsible">Time Table</button>
     <div class="content">
@@ -105,7 +105,9 @@ h6 {
   <h4>Season 5 Ep6 = 18:00  to 19:00 </h4>
   <h4>Miraculous Shanghai = 19:00  to 20:00 </h4>
   <h4>Miraculous Newyork  = 20: pm to 21:00 </h4>
-  <h4>Kung Fu Panda 4  = 21:00  to 0:00 </h4>
+  <h4>Mehmed the conquer ep 1  = 21:00  to 22:00 </h4>
+        <h4>Mehmed the conquer ep 2  = 22:00  to 23:00 </h4>
+        <h4>Mehmed the conquer ep 1  = 23:00  to 0:00 </h4>
         <!-- Add more schedule here -->
     </div>
 </div>
@@ -182,9 +184,15 @@ function loadVideo() {
       videoSource = 'https://youtu.be/ry20zjcMYnk?si=iOrcrC539AXjbiZg'; // Replace with the URL of your second video
     }
     
-       else if (currentHour >= 21 || currentHour < 0){
-  videoSource = 'https://mega.nz/embed/iU5xWTgC#6bNANDaE6_mJRCiedBjE-skaQmEu8n5IdKmxndCWWSg'; // Replace with the URL of your second video
+       else if (currentHour >= 21 || currentHour < 22){
+  videoSource = 'https://www.dailymotion.com/embed/video/x8akx5t'; // Replace with the URL of your second video
 }
+     else if (currentHour >= 22 || currentHour < 23){
+  videoSource = 'https://www.dailymotion.com/embed/video/x8am93x'; // Replace with the URL of your second video
+}
+    else if (currentHour >= 23 || currentHour < 0){
+  videoSource = 'https://www.dailymotion.com/embed/video/x8am95a'; // Replace with the URL of your second video
+}   
     // Add more conditions for other hours
 
     videoContainer.innerHTML = '<iframe width="560" height="315" src="' + videoSource + '" frameborder="0" allowfullscreen></iframe>';
