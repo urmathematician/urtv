@@ -4,126 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Player</title>
-    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
-    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
     <style>
-    body{
-        
-    background: url("https://i.pinimg.com/originals/11/07/dc/1107dcb96326f62483b718b0354c966e.jpg");
-    }
-        #video-screen {
-            width: 600px;
-            height: 400px;
-            background: #000;
-            margin-bottom: 10px;
-        }
-        .controls {
-            margin-bottom: 10px;
-        }
-        .collapsible {
-            cursor: pointer;
-            padding: 10px;
-            background: #ddd;
-            margin-top: 5px;
-        }
-        .video-icons {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 10px;
-            background: #f9f9f9;
-            gap: 10px;
-        }
-        .video-icon {
-            display: inline-flex;
-            flex-direction: column;
-            width: 100px;
-            height: 120px;
+        body {
+            font-family: Arial, sans-serif;
+           background:url(https://i.pinimg.com/originals/19/31/a8/1931a88a0d2953e93e1063ecff1064cd.jpg);
             text-align: center;
-            vertical-align: top;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            padding: 5px;
+            padding: 20px;
+            color:white;
         }
-        .video-icon img {
-            max-width: 100%;
-            max-height: 70px;
+        iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 20px 0;
+            border: none;
+        }
+        .video-list {
+            margin-top: 20px;
+        }
+        .video-list button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .video-list button:hover {
+            background-color: #0056b3;
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        .embed-icon {
+            position: absolute;
+            top: 25px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .video-list {
+            margin-top: 20px;
+        }
+        .video-list button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .video-list button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .video-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
-    <div id="video-screen">
-        <video id="video-element" class="video-js vjs-default-skin" controls preload="auto" width="600" height="400">
-            <source id="video-source" src="" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="controls">
-        <button onclick="previousVideo()">Previous</button>
-        <button onclick="nextVideo()">Next</button>
-        <button onclick="volumeUp()">Volume Up</button>
-        <button onclick="volumeDown()">Volume Down</button>
-    </div>
+    <h1>UR Tv </h1>
+    <h2>by UR Frequency</h2>
+    <a href="https://sites.google.com/view/urfrequency/home">
+ <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="URFrequency Logo" style="width: 200px; height: auto; position: absolute; top: 0px; right: 750px;"> </a>
+    
+ <div class="container">
+        <div class="video-wrapper">
+            <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="Embed Icon" class="embed-icon" onclick="showEmbedCode()">
 
-    <div class="collapsible" onclick="toggleCollapse(1)">Miraculous Season 6</div>
-    <div id="category-1" class="video-icons" style="display: none;">
-        <div class="video-icon" onclick="playVideo('video1.mp4')">
-            <img src="https://i.pinimg.com/originals/a2/6d/ef/a26def3aa397cfc35aa092d622113e60.jpg" alt="Video 1">
-            <div>Coming Soon</div>
-        </div>
-    </div>
+           
+    <iframe id="videoPlayer" src="https://drive.google.com/file/d/1D33lWhgvxHfBVSR8esGfKBbfxKXCiZjZ/preview" allowfullscreen></iframe>
 
-    <div class="collapsible" onclick="toggleCollapse(2)">Miraculous Movies</div>
-    <div id="category-2" class="video-icons" style="display: none;">
-        <div class="video-icon" onclick="playVideo('https://mega.nz/embed/XEwi3J5K#Wu8dsUJZFe77weAp8V9QVHwsPhJIQwSAnu9IGaZ2Ajk')">
-            <img src="https://i.pinimg.com/564x/50/86/db/5086db3ed5cf2dd3c08ea040259546e4.jpg" alt="Video 2">
-            <div>Awaking Movie English</div>
-        </div>
-        <div class="video-icon" onclick="playVideo('https://mega.nz/XEwi3J5K#Wu8dsUJZFe77weAp8V9QVHwsPhJIQwSAnu9IGaZ2Ajk')">
-            <img src="https://i.pinimg.com/564x/50/86/db/5086db3ed5cf2dd3c08ea040259546e4.jpg" alt="Video 3">
-            <div>Awaking Movie Urdu/Hindi</div>
-        </div>
+    <div class="video-list">
+        
+        <button onclick="playVideo('https://drive.google.com/file/d/11i4CnOFZOEugOoqIz-NlJl4DYfFAuiAX/preview')">Movie in English</button>
+        <button onclick="playVideo('https://drive.google.com/file/d/1D33lWhgvxHfBVSR8esGfKBbfxKXCiZjZ/preview')">Movie in Urdu</button>
+        <button onclick="playVideo()">Miraculous Season 6 Coming Soon don't click</button>
     </div>
-
-    <div class="collapsible" onclick="toggleCollapse(3)">Season 5</div>
-    <div id="category-3" class="video-icons" style="display: none;">
-        <div class="video-icon" onclick="playVideo('video3.mp4')">
-            <img src="thumb3.jpg" alt="Video 3">
-            <div>Will upload soon</div>
-        </div>
+    </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const player = videojs('video-element');
-
-            window.playVideo = function(videoSrc) {
-                player.src({ src: videoSrc, type: 'video/mp4' });
-                player.play();
-            };
-
-            window.toggleCollapse = function(category) {
-                const element = document.getElementById(`category-${category}`);
-                element.style.display = (element.style.display === 'none' || !element.style.display) ? 'block' : 'none';
-            };
-
-            window.previousVideo = function() {
-                // Implement functionality to play the previous video
-                console.log("Previous video functionality is not implemented.");
-            };
-
-            window.nextVideo = function() {
-                // Implement functionality to play the next video
-                console.log("Next video functionality is not implemented.");
-            };
-
-            window.volumeUp = function() {
-                player.volume(Math.min(player.volume() + 0.1, 1));
-            };
-
-            window.volumeDown = function() {
-                player.volume(Math.max(player.volume() - 0.1, 0));
-            };
-        });
+        function playVideo(videoURL) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            if (videoURL) {
+                videoPlayer.src = videoURL;
+            } else {
+                alert("This video is not available yet.");
+            }
+        }
     </script>
 </body>
 </html>
