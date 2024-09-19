@@ -96,11 +96,181 @@ background-image: linear-gradient(to right, black, green, red);
             max-width: 800px;
             margin: 20px 0;
         }
+        
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #000; /* Changed to black */
+      color: #fff;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      animation: slideIn 2s ease-out;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      animation: logoAnimation 2s ease-in-out;
+    }
+
+    .nav-menu ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-menu ul li {
+      margin-left: 20px;
+    }
+
+    .nav-menu ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-menu ul li a:hover {
+      color: #f4a261;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes logoAnimation {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Mobile view */
+    @media (max-width: 768px) {
+      .nav-menu ul {
+        display: none;
+        flex-direction: column;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #000; /* Changed to black */
+      color: #fff;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      animation: slideIn 2s ease-out;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      animation: logoAnimation 2s ease-in-out;
+    }
+
+    .nav-menu ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-menu ul li {
+      margin-left: 20px;
+    }
+
+    .nav-menu ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-menu ul li a:hover {
+      color: #f4a261;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes logoAnimation {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Mobile view */
+    @media (max-width: 768px) {
+      .nav-menu ul {
+        display: none;
+        flex-direction: column;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
     </style>
 </head>
 <body>
-    <h1>UR Animations  </h1>
-    <h2>by UR Frequency</h2>
+        <div class="logo">
+      <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="UR-Frequency-Old-Logo" />
+      UR frequency animations
+    </div>
+    </header>
     <h5>Some movies have hosting speed to much slow it takes long time to load, also you see only blank screen. Once load its too much faster</h2>
     <a href="https://sites.google.com/view/urfrequency/home">
  <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="URFrequency Logo" style="width: 200px; height: auto; position: absolute; top: 0px; right: 750px;"> </a>
