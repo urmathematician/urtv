@@ -25,14 +25,15 @@ background-color:Blue;
     }
 
 
-    .header {
+   .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      background-color: #000; /* Changed to black */
+      background-color:#333;
       color: #fff;
       position: relative;
+      z-index: 3; /* Ensure header stays on top */
     }
 
     .logo {
@@ -50,13 +51,39 @@ background-color:Blue;
       animation: logoAnimation 2s ease-in-out;
     }
 
+    .nav-menu {
+      position: absolute;
+      top: 60px; /* Adjust based on header height */
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      z-index: 3; /* Ensure the navigation menu appears above the container */
+    }
+
     .nav-menu ul {
       display: flex;
       list-style: none;
+      flex-direction: column; /* Stack items vertically */
+      padding: 10px 20px;
     }
 
     .nav-menu ul li {
-      margin-left: 20px;
+      margin: 10px 0; /* Space between items */
+      opacity: 0; /* Initially hidden */
+      transform: translateX(-100%); /* Start from left */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .nav-menu.open {
+      max-height: 300px; /* Increased height for more items */
+    }
+
+    .nav-menu.open ul li {
+      opacity: 1; /* Fade in */
+      transform: translateX(0); /* Slide in */
     }
 
     .nav-menu ul li a {
@@ -69,11 +96,15 @@ background-color:Blue;
       color: #f4a261;
     }
 
+    
     .menu-icon {
-      display: none;
-      font-size: 30px;
-      cursor: pointer;
-    }
+    display: block; /* Ensure it is block for smaller screens */
+    font-size: 30px;
+    cursor: pointer;
+    color: white; /* Make sure it's visible on a dark background */
+    z-index: 4; /* Ensure it's on top of other elements */
+}
+
 
     @keyframes slideIn {
       from {
@@ -96,18 +127,20 @@ background-color:Blue;
         transform: scale(1);
       }
     }
-
-    /* Mobile view */
-    @media (max-width: 768px) {
-      .nav-menu ul {
-        display: none;
-        flex-direction: column;
-      }
-
-      .menu-icon {
-        display: block;
-      }
+         .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: auto; /* Push footer to the bottom */
     }
+
+    .footer a {
+      color: #f4a261;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
         
         h3{
             color:white;
@@ -207,6 +240,16 @@ background-image: linear-gradient(to right, black, green, red);
       <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="UR-Frequency-Old-Logo" />
       UR Frequency Animations
     </div>
+     <nav class="nav-menu">
+      <ul>
+        <li><a href="https://urmathematician.github.io/ur_frequency/">Home</a></li>
+        <li><a href="">UR Industries</a></li>
+        <li><a href="https://urmathematician.github.io/urtv/">UR Frequency Animation</a></li>
+        <li><a href="https://urmathematician.github.io/urstore/">UR Store</a></li>
+        <li><a href="https://urmathematician.github.io/urtv/">UR Automation Products</a></li>
+        
+      </ul>
+    </nav>
     </header>
     <h5>Some movies have hosting speed to much slow it takes long time to load, also you see only blank screen. Once load its too much faster</h2>
     
@@ -277,30 +320,15 @@ background-image: linear-gradient(to right, black, green, red);
         }
     </script>
     
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905341714144701"
-     crossorigin="anonymous"></script>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBGHuC8OcbQEduRyi2ebwy1R3KgnNCHgpQ",
-    authDomain: "my-project-270ae.firebaseapp.com",
-    projectId: "my-project-270ae",
-    storageBucket: "my-project-270ae.appspot.com",
-    messagingSenderId: "929803416136",
-    appId: "1:929803416136:web:20d2d040313d3ad1139e7d",
-    measurementId: "G-Q9T51SXV8C"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+       </script>
+    <footer class="footer">
+    <p>&copy; 2024 UR Frequency. All rights reserved.</p>
+    <p>Just for Hobby</p>
+      Follow us on: 
+      <a href="https://www.facebook.com/profile.php?id=61565605880105" target="_blank">Facebook</a> | 
+      <a href="https://x.com/ur_frequency" target="_blank">Twitter</a> | 
+      <a href="https://www.instagram.com/ur._frequency/" target="_blank">Instagram</a>
+    </p>
+  </footer>
 </body>
 </html>
