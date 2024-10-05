@@ -15,31 +15,6 @@
         document.getElementById('videoPlayer').src = url;
     }
 
-    let countdownTime = 4 * 60 * 60;
-
-    function startCountdown() {
-        const countdownElement = document.getElementById('countdown');
-        
-        const interval = setInterval(function() {
-            const hours = Math.floor(countdownTime / 3600);
-            const minutes = Math.floor((countdownTime % 3600) / 60);
-            const seconds = countdownTime % 60;
-
-            countdownElement.textContent = 
-                (hours < 10 ? '0' : '') + hours + ':' + 
-                (minutes < 10 ? '0' : '') + minutes + ':' + 
-                (seconds < 10 ? '0' : '') + seconds;
-
-            if (countdownTime <= 0) {
-                clearInterval(interval);
-                countdownElement.textContent = "Time's up!";
-            }
-
-            countdownTime--;
-        }, 1000);
-    }
-
-    window.onload = startCountdown;
 </script>
 
     <style>
@@ -265,11 +240,7 @@ background-image: linear-gradient(to right, black, green, red);
             border: none;
             cursor: pointer
         }
-        #countdown {
-            font-size: 48px;
-            color: red;
-            margin-top: 20px;
-        }
+
     </style>
 </head>
 <body>
@@ -290,8 +261,8 @@ background-image: linear-gradient(to right, black, green, red);
     </nav>
 </header>
     <h5>Some movies have hosting speed to much slow it takes long time to load, also you see only blank screen. Once load its too much faster</h2>
-        <h6>Countdown for miraculous LONDON</h1>
-    <div id="countdown">04:00:00</div>
+        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+<a href="https://logwork.com/countdown-hvez" class="countdown-timer" data-timezone="Asia/Karachi" data-textcolor="#d91818" data-date="2024-10-05 15:38" data-digitscolor="#14c990" data-unitscolor="#1ad60d">Miraculous London </a>
 
  <div class="container">
         <div class="video-wrapper">
