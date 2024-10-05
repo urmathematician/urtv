@@ -240,7 +240,20 @@ background-image: linear-gradient(to right, black, green, red);
             border: none;
             cursor: pointer
         }
+  .new-icon {
+            font-size: 20px; /* Adjust size as needed */
+            margin-left: 5px; /* Space between the button and icon */
+            animation: blink 1s infinite; /* Animation for blinking effect */
+        }
 
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1; /* Fully visible */
+            }
+            50% {
+                opacity: 0; /* Fully transparent */
+            }
+        }
     </style>
 </head>
 <body>
@@ -279,7 +292,12 @@ background-image: linear-gradient(to right, black, green, red);
     <iframe id="videoPlayer" src="https://drive.google.com/file/d/1D33lWhgvxHfBVSR8esGfKBbfxKXCiZjZ/preview" allowfullscreen></iframe>
 
     <div class="video-list">
-                <button onclick="playVideo()">Miraculous Season 6 Coming Soon don't click</button>
+         <div class="video-list">
+        <button onclick="playVideo()">Miraculous LONDON 2024</button>
+        <span class="new-icon">🆕</span>
+    </div>
+      
+        <button onclick="playVideo()">Miraculous Season 6 Coming Soon don't click</button>
         <button onclick="playVideo('https://drive.google.com/file/d/11i4CnOFZOEugOoqIz-NlJl4DYfFAuiAX/preview')">Movie in English</button>
         <button onclick="playVideo('https://drive.google.com/file/d/1D33lWhgvxHfBVSR8esGfKBbfxKXCiZjZ/preview')">Movie in Urdu</button>
          <button onclick="playVideo('https://drive.google.com/file/d/1phzuzmvk7ZkiRXUWH50wJ-YhhE0iE7Ll/preview')">Miraculous songs of movie</button>
