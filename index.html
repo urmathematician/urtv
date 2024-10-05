@@ -10,6 +10,38 @@
     <meta name="google-site-verification" content="azthnYNKg3HDplNjwJN9vymVU-P18dp3iyE3FNFKORc" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905341714144701"
      crossorigin="anonymous"></script>
+     <script>
+    function playVideo(url) {
+        document.getElementById('videoPlayer').src = url;
+    }
+
+    let countdownTime = 4 * 60 * 60;
+
+    function startCountdown() {
+        const countdownElement = document.getElementById('countdown');
+        
+        const interval = setInterval(function() {
+            const hours = Math.floor(countdownTime / 3600);
+            const minutes = Math.floor((countdownTime % 3600) / 60);
+            const seconds = countdownTime % 60;
+
+            countdownElement.textContent = 
+                (hours < 10 ? '0' : '') + hours + ':' + 
+                (minutes < 10 ? '0' : '') + minutes + ':' + 
+                (seconds < 10 ? '0' : '') + seconds;
+
+            if (countdownTime <= 0) {
+                clearInterval(interval);
+                countdownElement.textContent = "Time's up!";
+            }
+
+            countdownTime--;
+        }, 1000);
+    }
+
+    window.onload = startCountdown;
+</script>
+
     <style>
     body {
             font-family: Arial, sans-serif;
@@ -233,6 +265,11 @@ background-image: linear-gradient(to right, black, green, red);
             border: none;
             cursor: pointer
         }
+        #countdown {
+            font-size: 48px;
+            color: red;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -253,7 +290,9 @@ background-image: linear-gradient(to right, black, green, red);
     </nav>
 </header>
     <h5>Some movies have hosting speed to much slow it takes long time to load, also you see only blank screen. Once load its too much faster</h2>
-    
+        <h6>Countdown for miraculous LONDON</h1>
+    <div id="countdown">04:00:00</div>
+
  <div class="container">
         <div class="video-wrapper">
             <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="Embed Icon" class="embed-icon" onclick="showEmbedCode()">
