@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://img.hotimg.com/1ef97f5ba533d7bd7.png" type="image/png">
+    <title>UR Frequency Animation Video</title>
+    <meta name="google-site-verification" content="azthnYNKg3HDplNjwJN9vymVU-P18dp3iyE3FNFKORc" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905341714144701"
+     crossorigin="anonymous"></script>
+     <script>
+    function playVideo(url) {
+        document.getElementById('videoPlayer').src = url;
+    }
+
+</script>
+
+    <style>
+    
+    body {
+            font-family: Arial, sans-serif;
+background-color:Black;
+            text-align: center;
+            padding: 20px;
+            color:white;
+        }
+            * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+   .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color:#333;
+      color: #fff;
+      position: relative;
+      z-index: 3; /* Ensure header stays on top */
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      animation: slideIn 2s ease-out;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      animation: logoAnimation 2s ease-in-out;
+    }
+
+    .nav-menu {
+      position: absolute;
+      top: 60px; /* Adjust based on header height */
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      z-index: 3; /* Ensure the navigation menu appears above the container */
+    }
+
+    .nav-menu ul {
+      display: flex;
+      list-style: none;
+      flex-direction: column; /* Stack items vertically */
+      padding: 10px 20px;
+    }
+
+    .nav-menu ul li {
+      margin: 10px 0; /* Space between items */
+      opacity: 0; /* Initially hidden */
+      transform: translateX(-100%); /* Start from left */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .nav-menu.open {
+      max-height: 300px; /* Increased height for more items */
+    }
+
+    .nav-menu.open ul li {
+      opacity: 1; /* Fade in */
+      transform: translateX(0); /* Slide in */
+    }
+
+    .nav-menu ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-menu ul li a:hover {
+      color: #f4a261;
+    }
+
+    
+ 
+.menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 4;
+}
+
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes logoAnimation {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+         .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: auto; /* Push footer to the bottom */
+    }
+
+    .footer a {
+      color: #f4a261;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+        
+        h3{
+            color:white;
+        }
+         h1{
+               background-color:green; 
+            color:white;
+            margin: 10px 0; /* Add spacing above and below headings */
+    padding: 10px; 
+        }
+        h4{
+            color:red;
+            font-style : Bold;
+        }
+        h5{
+            color:white;
+        }
+        h6{
+            color:green;
+            font-size:15px;
+        }
+        iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 20px 0;
+            border: none;
+        }
+        .video-list {
+    margin-top: 20px;
+}
+
+.video-list button {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align the content */
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.video-list button:hover {
+    background-color: red;
+}
+
+.thumbnail {
+    width: 100px; /* Set thumbnail width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 5px; /* Space between image and text */
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+        .embed-icon {
+            position: absolute;
+            top: 25px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 1;
+        }
+      .video-list {
+    margin-top: 20px;
+    display: flex; /* Use flexbox for inline display */
+    flex-wrap: wrap;
+}
+
+.video-list h1, 
+.video-list h2 {
+    flex: none; /* Prevent the headings from being flexible */
+    width: 100%; /* Make headings occupy full width */
+}
+
+.video-list .video-item {
+    flex: 1 1 30%; /* Adjust this as needed for your video items */
+    margin: 10px; /* Add spacing between video items */
+}
+
+/* Optional: Ensure items stack properly on smaller screens */
+@media (max-width: 600px) {
+    .video-list .video-item {
+        flex: 1 1 100%; /* Stack items on small screens */
+    }
+}
+
+        .video-list button {
+flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align the content */
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: transparent; /* Set background to transparent */
+    color: white; /* Change text color to black or desired color */
+    border: 2px solid #007bff; /* Optional: Add a border color */
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 120px; 
+        }
+
+        .video-list button:hover {
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .video-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        .whatsapp {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer
+        }
+         
+  .new-icon {
+            font-size: 20px; /* Adjust size as needed */
+            margin-left: 5px; /* Space between the button and icon */
+            animation: blink 1s infinite; /* Animation for blinking effect */
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1; /* Fully visible */
+            }
+            50% {
+                opacity: 0; /* Fully transparent */
+            }
+        }
+    </style>
+</head>
+<body>
+ <header class="header">
+    <div class="logo">
+      <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="UR-Frequency-Old-Logo" />
+      UR Frequency Animations
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div> <!-- Added menu icon -->
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="https://urmathematician.github.io/urtv/">Home</a></li>
+        <li><a href="">UR Industries</a></li>
+        <li><a href="https://urmathematician.github.io/urtv/">UR Frequency Animation</a></li>
+        <li><a href="https://urmathematician.github.io/urstore/">UR Store</a></li>
+        <li><a href="https://urmathematician.github.io/urtv/">UR Automation Products</a></li>
+      </ul>
+    </nav>
+</header>
+<h4>give me a review on this page at instagram</h4>
+      <a href="https://www.instagram.com/adrain_catnoir/">
+ <h4>@adrian_catnoir</h4> </a>
+    <h5>Some movies have hosting speed to much slow it takes long time to load, also you see only blank screen. Once load its too much faster</h2>
+    
+        <div class="video-wrapper">
+            <img src="https://img.hotimg.com/UR-Frequency-Old-Logo.png" alt="Embed Icon" class="embed-icon" onclick="showEmbedCode()">
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905341714144701"
+     crossorigin="anonymous"></script>
+           
+    <iframe id="videoPlayer" src="https://drive.google.com/file/d/1D33lWhgvxHfBVSR8esGfKBbfxKXCiZjZ/preview" allowfullscreen></iframe>
+
+    <div class="video-list">
+            <div class="video-list">
+<div class="video-list">
+   <div class="video-list">
+       <h1>New items</h1>
+  <button onclick="playVideo('https://drive.google.com/file/d/1MHI3J1wQHYZDThM69zGQXMKI6SaFbb1g/preview')">
+        <img src="https://i.pinimg.com/originals/ff/c2/27/ffc2270be7670180ff82cefc16a24373.jpg" alt="Miraculous LONDON 2024" class="thumbnail">
+        <span>Miraculous LONDON 2024 (French)</span>
+        <span class="new-icon">🆕</span> <!-- Moved inside the button -->
+    </button>
+       <button onclick="playVideo('https://wv-cdn-00-00.wowza.com/token:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJmODYxM2U1Yy1mMzU3LTQ0ZDItOGFiZi05YTA0OTJhYjFjZTYiLCJuYmYiOjE3MjgxMTc4MjMsImlzcyI6Imh0dHBzOi8vd3d3LmZsb3dwbGF5ZXIuY29tIiwiZXhwIjoxNzI4MjA0MjIzLCJpYXQiOjE3MjgxMTc4MjN9.OuVlj-WHMyHzu61EAc42CGrAIPq41ozB6t9fxbxWtU0zY6QdznA2vG2DwrN0n_7h3xPuDo12dxHUOV0vG9KF4jAvhjmQfmOfLSvVTZxeWQT5eIJ5o7E5E7ZPI7q-gV5f2UFSCqhlZfiFHRXz_S74PNvDpfEux7y2wrkCBO1fE0CgkJnAhU-xA8EeLPlg3KQzhF_ZdMohCU4VGe4CblpfIX6I22JPKrFr2AKUbVwsB42_lmCAoqRZ69YdN4rtAKXME6zG71HHeXFUim6IcZUqM-FdHMZp5AxDd4BYgfs4hfMrWerLz0yv9p9fH-zzSlzgrTwdSvi3Spz0knYynoC051MIGcwuWW9Ir84caE1qdXIMX_xrTzNziZCCkasDkliJQf-3Wirl2dkw6iiJd0IfdELAWunYlduCOtFPQpI6q0KrFsz_lZQmvXhQO-RS98PKCZn5CwELLMuK5exV8x_8um0l3deccU26Q16pBsTngLI3IU0WRKCOfM5tgYA8CsG1u5N2o3mb84uFwPqSlRwuxeK5x3RY_foQZA07IF_QJQgVk22Ge3bL3kbWSwWibJT63oCNRqNIRKThn6uTLmPNWkuxb7PUndkLelAIP8dnAfjA5vAcZ91u1Ov-I4bml2eIgHOEguVHGEfprByvM4i19nByT44L3LCV0OjYXpgw3Jg/aa343d79-8208-45b7-9258-93de5c3b40e4/v-f8613e5c-f357-44d2-8abf-9a0492ab1ce6_original.mp4')">
+        <img src="https://i.pinimg.com/originals/ff/c2/27/ffc2270be7670180ff82cefc16a24373.jpg" alt="Miraculous LONDON 2024" class="thumbnail">
+        <span>Miraculous LONDON 2024 Temperoary link (English)</span>
+        <span class="new-icon">🆕</span> <!-- Moved inside the button -->
+    </button>
+         <button onclick="playVideo('https://drive.google.com/file/d/17aKZ-0rXhZVjrFyEOeRLhJnE9tVhp1SM/preview')">
+        <img src="https://i.pinimg.com/736x/21/f7/a1/21f7a1d96b9f41997fe32669c572d1fe.jpg" alt="Miraculous Season 6 Coming Soon" class="thumbnail">
+        <span>Miraculous Shaddybug and Claw Noir</span>
+    </button>
+        <h1>Miraculous</h1>
+    <button onclick="playVideo('https://www.youtube.com/embed/CvBZC-hURAg?si=Xtg8gtRYUI4BnO4B')">
+        <img src="https://i.pinimg.com/originals/42/d4/cf/42d4cfba64b38325f3d0479c5f32fb41.jpg" alt="Miraculous Season 6 Coming Soon" class="thumbnail">
+        <span>CAT Blac (Most watched in Miraculous History🔥🔥🔥)</span>
+    </button>
+    <button onclick="playVideo()">
+        <img src="https://i.pinimg.com/564x/6c/dd/56/6cdd56b02cc982a605c53e35bce82d3b.jpg" alt="Miraculous Season 6 Coming Soon" class="thumbnail">
+        <span>Miraculous Season 6 Coming Soon<br>don't click</span>
+    </button>
+    <button onclick="playVideo('https://drive.google.com/file/d/11i4CnOFZOEugOoqIz-NlJl4DYfFAuiAX/preview')">
+        <img src="https://i.pinimg.com/originals/f0/c1/bb/f0c1bbb6702941ce25bd44849ecbf7bb.jpg" alt="Movie in English" class="thumbnail">
+        <span>Movie in English</span>
+    </button>
+    <button onclick="playVideo('https://drive.google.com/file/d/1D33lWhgvxHfBVSR8esGfKBbfxKXCiZjZ/preview')">
+        <img src="https://i.pinimg.com/originals/f0/c1/bb/f0c1bbb6702941ce25bd44849ecbf7bb.jpg" alt="Movie in Urdu" class="thumbnail">
+        <span>Movie in Urdu</span>
+    </button>
+    <button onclick="playVideo('https://drive.google.com/file/d/1phzuzmvk7ZkiRXUWH50wJ-YhhE0iE7Ll/preview')">
+        <img src="https://i.pinimg.com/originals/6d/8a/a5/6d8aa5647ca3f1bd1bd674fea76ef7ed.jpg" alt="Miraculous songs of movie" class="thumbnail">
+        <span>Miraculous songs of movie</span>
+    </button>
+      <button onclick="playVideo('https://www.youtube.com/embed/32n8P0ry5aE?si=hqABQBMlANqs3aJk')">
+        <img src="https://i.pinimg.com/originals/49/e7/50/49e750f39c42530c7a31180fc909d1fb.jpg" alt="End-of-Ladybug-fan-made" class="thumbnail">
+        <span>End-of-Ladybug-fan-made</span>
+    </button>
+     <button onclick="playVideo('https://www.youtube.com/embed/r3OMgOsa_sQ?si=eZYPVOA7wcStl6Gi')">
+        <img src="https://i.pinimg.com/originals/b3/92/1e/b3921eaa7ba625044d62976ac17620bf.jpg" alt="Miraculous NewYork Special" class="thumbnail">
+        <span>Miraculous NewYork Special</span>
+    </button>
+    <button onclick="playVideo('https://www.youtube.com/embed/DxpKvgeREP4?si=967lQE-VwGM5UmxK')">
+        <img src="https://i.pinimg.com/564x/47/56/2f/47562f9a977cf35e6187092116643971.jpg" alt="Miraculous Shanghai (China)" class="thumbnail">
+        <span>Miraculous Shanghai (China)</span>
+    </button>
+    <button onclick="playVideo('https://drive.google.com/file/d/1STMfhqK_BVRN9ahUtO0P8LedYuD5XQZ-/preview')">
+        <img src="https://i.pinimg.com/originals/e0/f6/14/e0f614f874fff196ef00e88acaadd397.jpg" alt="Trailer of season 6" class="thumbnail">
+        <span>Trailer of season 6</span>
+    </button>
+ <h1>UR Animation</h1>
+   <button onclick="playVideo('')"><img src="https://i.pinimg.com/564x/77/20/f2/7720f241c14a9a260041db326d6206ed.jpg" alt="UR Industries" class="thumbnail">
+        <span>UR animations</span></button>
+
+    <h1>Child Anime</h1>
+    <button onclick="playVideo('https://geo.dailymotion.com/player.html?video=x91ejl2')">
+        <img src="https://i.pinimg.com/originals/ad/74/ff/ad74ffd0e0b2e4115edfe88e08421c92.jpg" alt="I Want To Eat Your Pancreas" class="thumbnail">
+        <span>I Want To Eat Your Pancreas</span>
+    </button>
+       
+    <button onclick="playVideo('https://geo.dailymotion.com/player.html?video=x8pjc7m')">
+        <img src="https://i.pinimg.com/enabled_lo/736x/da/ff/df/daffdf450cd74a47eee4e2ad0f274200.jpg" alt="I Want To Eat Your Pancreas" class="thumbnail">
+        <span>A Silent Voice</span>
+    </button>
+       
+    <button onclick="playVideo('https://geo.dailymotion.com/player.html?video=x8lyr0s')">
+        <img src="https://i.pinimg.com/564x/2b/aa/48/2baa48dd77dfb6487009b04ef89249bf.jpg" alt="I Want To Eat Your Pancreas" class="thumbnail">
+        <span>A Wisker Away </span>
+    </button>
+  
+        <h1>Playlists</h1>
+    <button onclick="playVideo('https://www.youtube.com//embed/playlist?list=PLL446BBTET2xb7ky08GgaSpUZ9a7ZLKxG&jct=3se7sg5NdQkmBaAuPd2NSg')">
+        <img src="https://i.pinimg.com/564x/ed/b5/3e/edb53ee24f8098416f655c86fa7afcb4.jpg" alt="End-of-Ladybug-fan-made" class="thumbnail">
+        <span>AMV (PLAYLIST)</span>
+    </button>
+     <h1>Legend Anime</h1>
+   
+    
+ <button onclick="playVideo('https://archive.org/embed/dragon-ball-super-broly_202310')"><img src="https://i.pinimg.com/originals/cf/4c/08/cf4c0800521c9b642bd8f4c8b1f2f351.jpg" alt="Dragon Ball Z super" class="thumbnail">
+        <span>Dragon Ball Z super</span></button>
+          <button onclick="playVideo('https://www.youtube.com/watch?v=u2zxYvzZmL8')"><img src="https://i.pinimg.com/564x/92/3e/2a/923e2ac4798fa310fa5f4f3ffbb9a32b.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Anime War</span></button>
+                 <button onclick="playVideo('https://www.youtube.com/embed/nFqyG9BvJLw?si=oFb_-VWZJ749RizZ')"><img src="https://i.pinimg.com/originals/35/8c/cd/358ccdca263ab5779fda796414f7059b.jpg" alt="song" class="thumbnail">
+        <span>Loniliness (Kakashi Hatake)</span></button>
+         <button onclick="playVideo('https://www.youtube.com/embed/tW1H8WUDHkQ?si=c8RfViwpf9Ld28kc')"><img src="https://i.pinimg.com/originals/43/e9/38/43e938df497e5d855e7c1da1f33d6b6f.jpg" alt="song" class="thumbnail">
+        <span>BlueBird (Naruto)</span></button>
+        <h1>Dream Works</h1>
+        <button onclick="playVideo('https://archive.org/embed/youtube-tbVRYRkAnO0')"><img src="https://i.pinimg.com/originals/48/75/c6/4875c609168185a990dd76fec2e234ec.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Puss in boots last wish</span></button>
+
+        <button onclick="playVideo('https://archive.org/embed/isbn_9781442430754')"><img src="        https://i.pinimg.com/originals/3f/e4/82/3fe48276e43f277c3db4d2d648b84ed6.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Rise of gardian</span></button>
+        <button onclick="playVideo('https://archive.org/embed/ZUTOPIA')"><img src="https://i.pinimg.com/564x/c6/47/ed/c647ed93a3aa2df9fcfe1b6866276c18.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>ZooTopia</span></button>
+         <h1>Disney</h1>
+        <button onclick="playVideo('https://geo.dailymotion.com/player.html?video=x948wqm')"><img src="https://i.pinimg.com/originals/6e/00/a3/6e00a34b8146ac535a0a90a9ce4ea4a5.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Stand by me Doremon 2 (Urdu)</span></button>
+          <button onclick="playVideo('https://www.youtube.com/embed/VchkwAG_JZ4?si=RSZpxIvrSGgIwhDW')"><img src="https://i.pinimg.com/originals/6e/00/a3/6e00a34b8146ac535a0a90a9ce4ea4a5.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Stand by me Doremon 2 (English)</span></button>
+
+
+
+
+         <h1>Ben 10</h1>
+  <button onclick="playVideo('https://geo.dailymotion.com/player.html?video=x8hk313')"><img src="https://i.pinimg.com/564x/08/78/fa/0878fac06e0ba528ae97f957ae0efd24.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Ben 10 secrect of omnitrix (Urdu)</span></button>
+
+        
+           <button onclick="playVideo('https://drive.google.com/file/d/1jyRRWBzFNjXqpUJXURiUOPZYFrWwNHNg/preview')"><img src="https://i.pinimg.com/originals/83/99/59/83995914476695298a8791fc96a103c8.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Ben 10 Ultimate alien ep 50 (Urdu)</span></button>
+        
+           <button onclick="playVideo('https://drive.google.com/file/d/1KcVlb_bhecBWTB5qm1mGev3Z13-t9hO1/preview')"><img src="https://i.pinimg.com/originals/83/99/59/83995914476695298a8791fc96a103c8.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Ben 10 Ultimate alien ep 51 (Urdu)</span></button>
+         <button onclick="playVideo('https://drive.google.com/file/d/1T-uSiTgOtCdeh6irnf4MW_XSlJyGosG1/preview')"><img src="https://i.pinimg.com/originals/83/99/59/83995914476695298a8791fc96a103c8.jpg" alt="Puss in boots last wish" class="thumbnail">
+        <span>Ben 10 Ultimate alien ep finnal (Urdu)</span></button>
+       
+          <h1>G Drive links (Naruto)</h1>
+       
+                <button onclick="playVideo('https://docs.google.com/file/d/1qV7XRdag6-4AbUwXFXfZPxyeCesSjNFL/edit')"><img src="https://i.pinimg.com/originals/b3/01/1b/b3011b6ffe97dc8d2ef607575e61a893.jpg" alt="song" class="thumbnail">
+        <span>Naruto (G-Drive link) Download</span></button>
+
+                <button onclick="playVideo('https://drive.google.com/file/d/1pBOEh-WpVad1BNla8uC0OaEzoBblE7M1/edit')"><img src="https://i.pinimg.com/originals/07/1f/b4/071fb44d41a77007f699fb74015a7638.jpg" alt="song" class="thumbnail">
+        <span>Naruto Shippuden (G-Drive link) Download</span></button>
+       
+
+   </div>
+        <h4>News</h4>
+    
+   </div>
+        <h5>Samg Animations left the Mirculous so we don't see graphics like older one </h5>
+        <h5>Mirculous Ladybug and Cat Noir season 6 </h3>
+        <h5>Release on 28 September 2024, </h3>
+            <h5>Upload soon </h3>
+                
+   </div>
+                    <h6>If you're Tired and want to sleep peacefully, Then listen these Naseed, in 23 Naseed one will claim you </h3>
+          
+                    <button onclick="playVideo('https://www.youtube.com/embed/videoseries?list=PLa6G2a01-vqzp5PROMIaOUchAuYtgTRgl')">Listen Naseed</button>
+        
+   </div>   
+        <h5>By Ubaid UR Rehman (UR Mathematician, Mechanical Engineer, Space Scientist)</h6>
+            <a href="https://urmathematician.github.io/ubaid/" target="_blank" class="btn whatsapp">About Me</a>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        function playVideo(videoURL) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            if (videoURL) {
+                videoPlayer.src = videoURL;
+            } else {
+                alert("This video is not available yet.");
+            }
+        }
+    </script>
+     <script>
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('open');
+});
+function toggleMenu() {
+    document.getElementById('menu').classList.toggle('open');
+}
+
+       </script>
+    <footer class="footer">
+    <p>&copy; 2024 UR Frequency. All rights reserved.</p>
+    <p>Just for Hobby</p>
+      Follow us on: 
+      <a href="https://www.facebook.com/profile.php?id=61565605880105" target="_blank">Facebook</a> | 
+      <a href="https://x.com/ur_frequency" target="_blank">Twitter</a> | 
+      <a href="https://www.instagram.com/ur._frequency/" target="_blank">Instagram</a>
+    </p>
+  </footer>
+</body>
+</html>
